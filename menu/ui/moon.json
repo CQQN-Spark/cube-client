@@ -1,0 +1,162 @@
+{
+  "namespace": "staranim",
+
+  "star1": {
+    "type": "image",
+    "size": [ 10, 10 ],
+    "uv_size": [ 64, 64 ],
+    "texture": "menu/components/moonstar"
+  },
+
+  "star2": {
+    "type": "image",
+    "size": [ 9, 9 ],
+    "uv_size": [ 64, 64 ],
+    "texture": "menu/components/moonstar"
+  },
+   "ani": {
+    "type": "image",
+    "size": [ 200, 200 ],
+  
+    "texture": "textures/love"
+  },
+   "ani2": {
+    "type": "image",
+    "size": [ 200, 200 ],
+   
+    "texture": "textures/lovee"
+  },
+  "star3": {
+    "type": "image",
+    "size": [ 8, 8 ],
+    "uv_size": [ 64, 64 ],
+    "texture": "menu/components/moonstar"
+  },
+ "star4": {
+    "type": "image",
+    "size": [ 4, 4 ],
+    "uv_size": [ 64, 64 ],
+    "texture": "menu/components/moonstar"
+  },
+  "anim_uv_base": {
+    "anim_type": "uv",
+    "from": "$uv_frame",
+    "to": "$uv_frame",
+    "duration": 0.05
+  },
+  "animm_wait": {
+    "anim_type": "wait",
+    "duration": 0.1,
+    "next": "@staranim.2"
+  },
+  
+
+  "anim_wait": {
+    "anim_type": "wait",
+    "duration": 5,
+    "next": "@staranim.1_01"
+  },
+    "1@staranim.ani": { "next": "@staranim.animm_wait" },
+  "2@staranim.ani2": { "next": "@staranim.3" },
+  
+    "3@staranim.ani2": { "next": "@staranim.1" },
+    
+    
+    
+    
+  "1_00@staranim.anim_uv_base": { "$uv_frame": [ 0, 0    ], "next": "@staranim.anim_wait" },
+  "1_01@staranim.anim_uv_base": { "$uv_frame": [ 0, 64   ], "next": "@staranim.1_02" },
+  "1_02@staranim.anim_uv_base": { "$uv_frame": [ 0, 128  ], "next": "@staranim.1_03" },
+  "1_03@staranim.anim_uv_base": { "$uv_frame": [ 0, 192  ], "next": "@staranim.1_04" },
+  "1_04@staranim.anim_uv_base": { "$uv_frame": [ 0, 256  ], "next": "@staranim.1_05" },
+  "1_05@staranim.anim_uv_base": { "$uv_frame": [ 0, 320  ], "next": "@staranim.1_06" },
+  "1_06@staranim.anim_uv_base": { "$uv_frame": [ 0, 384  ], "next": "@staranim.1_07" },
+  "1_07@staranim.anim_uv_base": { "$uv_frame": [ 0, 448  ], "next": "@staranim.1_08" },
+  "1_08@staranim.anim_uv_base": { "$uv_frame": [ 0, 512  ], "next": "@staranim.1_09" },
+  "1_09@staranim.anim_uv_base": { "$uv_frame": [ 0, 576  ], "next": "@staranim.1_10" },
+  "1_10@staranim.anim_uv_base": { "$uv_frame": [ 0, 576  ], "next": "@staranim.1_11" },
+  "1_11@staranim.anim_uv_base": { "$uv_frame": [ 0, 512  ], "next": "@staranim.1_12" },
+  "1_12@staranim.anim_uv_base": { "$uv_frame": [ 0, 448  ], "next": "@staranim.1_13" },
+  "1_13@staranim.anim_uv_base": { "$uv_frame": [ 0, 320  ], "next": "@staranim.1_14" },
+  "1_14@staranim.anim_uv_base": { "$uv_frame": [ 0, 320  ], "next": "@staranim.1_15" },
+  "1_15@staranim.anim_uv_base": { "$uv_frame": [ 0, 256  ], "next": "@staranim.1_16" },
+  "1_16@staranim.anim_uv_base": { "$uv_frame": [ 0, 192  ], "next": "@staranim.1_17" },
+  "1_17@staranim.anim_uv_base": { "$uv_frame": [ 0, 128  ], "next": "@staranim.1_18" },
+  "1_18@staranim.anim_uv_base": { "$uv_frame": [ 0, 64   ], "next": "@staranim.1_00" },
+  
+  
+ "oonlogo": {
+    "type": "panel",
+    "size": [ 100, 100 ],
+    "anchor_from":"center",
+    "anchor_to":"center",
+    "offset":[-30,-85],
+    "layer":10,
+   "controls":[
+   {"yes":{ "anims":["@staranim.1"]}}]},
+    
+    
+  
+   "moonlogo": {
+    "type": "image",
+    "size": [ 80, 80 ],
+    "anchor_from":"middle",
+    "anchor_to":"middle",
+    "offset":[-30,-100],
+    "layer":10,
+    "texture": "menu/components/moonlogo",
+    "controls": [
+      { 
+        "@staranim.star2": {
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "uv": "@staranim.1_06",
+          "offset": [ 46, 22 ]
+        }
+      },
+      { 
+        "@staranim.star2": {
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "uv": "@staranim.1_00",
+          "offset": [ 56, 35.5 ]
+        }
+      },
+      { 
+        "@staranim.star2": {
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "uv": "@staranim.1_09",
+          "offset": [ 31, 28.5 ]
+        }
+      },
+ 
+      { 
+        "@staranim.star3": {
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "uv": "@staranim.1_12",
+          "offset": [ 13, 43 ]
+        }
+      },
+      { 
+        "@staranim.star3": {
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "uv": "@staranim.1_18",
+          "offset": [ 42.5, 38 ]
+        }
+      },
+   { 
+        "@staranim.star1": {
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "uv": "@staranim.1_15",
+          "offset": [ 31.5, 16 ]
+        }
+      }
+    ]
+  }
+
+  
+}

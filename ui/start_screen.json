@@ -1,0 +1,77 @@
+//For Lounge Client
+{
+  "xbl_signin_button@resume2_button.resume2_button": {
+    "$pressed_button_name": "button.signin",
+    "$button_text": "^",
+    "size":[15,23]
+  },
+  "custom_login_button": {
+    "type": "panel",
+    "anchor_to": "top_right",
+    "anchor_from": "top_right",
+    "size": [ 15, 15 ],
+    "layer":110,
+    "offset": [ -3, 3 ],
+    "controls": [
+      {
+        "stacked_column": {
+          "type": "stack_panel",
+          "size": [ "100%", "100%" ],
+          "offset": [ "5%", 0 ],
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "orientation": "horizontal",
+          "controls": [
+            {
+              "xbl_btn@start.column_frame": {
+                "ignored": "($nx_os or $is_ps4)",
+                "size": [ "100%", "100%" ],
+                "controls": [
+                  { "xbl_signin_button@start.xbl_signin_button": {} }
+                ],
+                "bindings": [
+                  {
+                    "binding_name": "#sign_in_visible",
+                    "binding_name_override": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "signingin": {
+                "size": [ 15, 15 ],
+                "max_size": [ 15, 15 ],
+                "type": "label",
+                "color": "$main_header_text_color",
+                "text": "...",
+                "bindings": [
+                  {
+                    "binding_name": "#signingin_visible",
+                    "binding_name_override": "#visible"
+                  },
+                  {
+                    "binding_name": "#signingin_text"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "bindings": [
+      {
+        "binding_name": "#online_buttons_visible",
+        "binding_name_override": "#visible"
+      }
+    ]
+  },
+  "start_screen@common.base_screen": {
+    "$screen_content": "new_start_screen.base_screen",
+    "$screen_animations": ["@screen_animations.middle_background_fade_out_animation_once",
+      "@screen_animations.middle_background_fade_out_animation_push",
+      "@screen_animations.middle_background_fade_out_animation_pop",
+      "@screen_animations.middle_background_fade_back_animation_push",
+      "@screen_animations.middle_background_fade_back_animation_pop"]
+  }
+}

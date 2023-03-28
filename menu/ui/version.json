@@ -1,0 +1,44 @@
+//For Fate
+{
+  "namespace": "Lounge_text",
+  "minecraft_version": {
+    "type": "stack_panel",
+    "orientation":"horizontal",
+    "size": [ "50%", "10%" ],
+    "offset": [12, 0],
+    "anchor_from": "bottom_middle",
+    "anchor_to": "bottom_middle",
+    "layer": 1000,
+    "controls": [
+        {"minecraft":{
+        "type":"label",
+        "text":"Minecraft ",
+        "color":[ 0.77,0.77,0.77],
+        "font_type":"smooth",
+        "anchor_from":"center",
+        "font_scale_factor":1.0,
+        "anchor_to":"center"
+        }},
+        {
+  "version": {
+    "type": "label",
+    "color": [ 0.77, 0.77, 0.77 ],
+    "text": "#version",
+    "font_type": "smooth",
+    "size": [ "default", 10 ],
+    "font_scale_factor":1.0,
+    "max_size": [ "100%", "100%" ],
+    "anchor_from": "center",
+    "anchor_to": "center",
+    "offset": [ 18, 0 ],
+    "bindings": [
+      {
+        "binding_name": "#version"
+      }
+    ]
+  }
+
+    ]
+  }
+}
+}

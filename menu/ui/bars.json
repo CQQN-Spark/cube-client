@@ -1,0 +1,142 @@
+//For Lounge
+{
+  "namespace":"Lounge_bar",
+  
+    "mclogo": {
+    "type": "image",
+    "size": [ 150 , 150 ],
+    "texture": "menu/components/mclogo",
+    "anchor_from": "center",
+    "offset":[0,-110],
+    "anchor_to": "center",
+    "layer": 10
+  },
+    "dmodbg": {
+    "type": "image",
+    "size":["0%","0%"],
+    "texture": "menu/components/bg",
+    "layer": -500
+  },
+  "dmodloading": {
+    "type": "image",
+    "size":["130%","130%"],
+    "texture": "menu/components/progressbg",
+    "layer": -500
+  }, 
+   "darky":{
+  "type":"image",
+  "size":["200%",4],
+  "anchor_from":"top_middle","anchor_to":"top_middle","offset":[0,26],
+  "texture":"menu/components/darky",
+  "layer":1
+  },
+  "bar_middle2": {
+  "type": "image",
+  "size": [ 150 , 215 ],
+  "texture": "menu/components/top_bar",
+  "anchor_from": "middle",
+  "anchor_to": "middle",
+  "offset": [ 130,10],
+  "layer": 0
+  },
+  "Lounge": {
+  "type": "label",
+    "color": [ 0.77, 0.77, 0.77 ],
+    "text": "Plat Client v1.0",
+    "font_type": "smooth",
+    "size": [ "default", 10 ],
+    "max_size": [ "100%", "100%" ],
+    "anchor_from": "middle",
+    "anchor_to": "middle",
+    "offset": [ 0, 65],
+    "layer": 10
+    },
+  
+      "Lounge1": {
+  "type": "label",
+    "color": [ 1.0, 1.0, 1.0 ],
+    "text": "Visuals",
+    "font_type": "smooth",
+    "size": [ "default", 10 ],
+    "max_size": [ "100%", "100%" ],
+    "anchor_from": "middle",
+    "anchor_to": "middle",
+    "offset": [ -150, -65],
+    "layer": 10
+    },
+ 
+  "Lounge2": {
+  "type": "label",
+    "color": [ 1.0, 1.0, 1.0 ],
+    "text": "Miscellaneous",
+    "font_type": "smooth",
+    "size": [ "default", 10 ],
+    "max_size": [ "100%", "100%" ],
+    "anchor_from": "middle",
+    "anchor_to": "middle",
+    "offset": [ 150, -65],
+    "layer": 10
+    },
+
+  "Lounge3": {
+  "type": "label",
+    "color": [ 1.0, 1.0, 1.0 ],
+    "text": "PvP",
+    "font_type": "smooth",
+    "size": [ "default", 10 ],
+    "max_size": [ "100%", "100%" ],
+    "anchor_from": "middle",
+    "anchor_to": "middle",
+    "offset": [ 0, -65],
+    "layer": 10
+    },
+
+    "settingsi": {
+  "type": "image",
+  "size": [ 30, 30 ],
+  "texture": "menu/components/optionsicon", 
+  "layer": 10
+},
+
+"storei": {
+  "type": "image",
+  "size": [ 25 , 25 ],
+  "texture": "menu/components/storeicon",
+ "layer": 10
+},
+ "xi": {
+  "type": "image",
+  "size": [ 30 , 30 ],
+  "texture": "menu/components/closeicon",
+  "layer": 10
+},
+ "darkbg": {
+  "type": "image",
+  "size": [ 2000, 2000],
+  "texture": "menu/components/dbg",
+  "anchor_from": "middle",
+  "anchor_to": "middle",
+  "offset": [0,0],
+  "layer": 0
+},
+"soon":{
+"type":"image",
+"texture":"menu/components/dbg",
+"layer":100
+},
+ "playbg": {
+  "type": "image",
+  "size":["130%","130%"],
+  "texture": "menu/components/playbg",
+  "anchor_from": "top_middle",
+  "anchor_to": "top_middle",
+  "offset":[0,-100],
+  "layer": 1
+  
+}
+
+
+
+
+        
+}

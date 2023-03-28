@@ -1,0 +1,22 @@
+{
+  "namespace": "Start_Screen",
+
+  "Content_Panel": {
+    "type": "panel",
+    "controls": [
+      {"144@Main_Screen_Render.settings":{}},
+      {"ff2@Main_Screen_Render.play":{}},
+      {"3@Main_Screen_Render.exit":{}},
+      {"4@Main_Screen_Render.skin":{}},
+      {"5@Main_Screen_Render.Labels":{}},
+      {"6@Main_Screen_Render.gamertag":{}},
+      {"7@Main_Screen_Render.store":{}},
+      {"ggg8@Main_Screen_Render.title":{}},
+      {"9@Main_Screen_Render.logo":{}},
+       {"16662@Main_Screen_Render.CB_LOGO":{}},
+      {"16653@Main_Screen_Render.Title_Text":{}}
+      {"15554@Main_Screen_Render.codebreaker_buttonnew":{}},
+      {"155555@Main_Screen_Render.BGANIMATION":{}}
+    ]
+  }   
+ }

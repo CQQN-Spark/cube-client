@@ -1,0 +1,190 @@
+{
+  "namespace": "lol",
+  "scale_big": {
+    "anim_type": "size",
+    "easing": "in_sine",
+    "from": [
+      "104%",
+      "110%"
+    ],
+    "to": [
+      "108%",
+      "120%"
+    ],
+    "duration": 0.5,
+    "next": "@lol.scale_small"
+  },
+  "scale_small": {
+    "anim_type": "size",
+    "easing": "out_sine",
+    "from": [
+      "108%",
+      "120%"
+    ],
+    "to": [
+      "104%",
+      "110%"
+    ],
+    "duration": 0.5,
+    "next": "@lol.scale_big"
+  },
+  "button_label": {
+    "type": "label",
+    "layer": 2,
+    "text": "$button_text",
+    "shadow":"true",
+	"font_type":"Roboto-Regular",
+    "color":  "$text_color", 
+    "text_alignment":"left",
+    "font_scale_factor": 0.9,
+    "max_size": [
+      "100% - 4px",
+      "100% - 4px"
+    ],
+    "bindings": "$button_bindings"
+  },
+  "main_menu_button_image": {
+    "type": "image",
+    "$custom_content|default": "",
+    "$default|default": false,
+    "$hover|default": false,
+    "$pressed|default": false,
+    "$locked|default": false,
+    "$button_bindings|default": [],
+    "controls": [
+      {
+        "button_custom_content@$custom_content": {}
+      },
+      {
+        "default_button_content@lol.button_label": {
+          "visible": "($custom_content = '')"
+        }
+      }
+    ]
+  },
+  "main_menu_button_default@lol.main_menu_button_image": {
+    "$default": true,
+    "alpha": "$default_alpha",
+    "$default_alpha|default": 1,
+     "$text_color":[ 0.6, 0.6, 0.6 ],
+      "text_alignment":"left",    "texture": "textures/cool/lol"
+  },
+  "main_menu_button_hover@lol.main_menu_button_image": {
+    "$hover": true,
+    "texture": "$hover_button_texture",
+    "$hover_button_texture|default": "textures/cool/lol_hover",
+       "$has_hover_text": true,
+       "$text_color":[ 1.0, 1.0, 1.0 ], 
+        "text_alignment":"left",    "layer":5,
+    "propagate_alpha": true,
+    "disable_anim_fast_forward": true,
+    "anims": ["@lol.scale_big"]
+  },
+  "main_menu_button_pressed@lol.main_menu_button_hover": {
+    "size": [
+      "100%",
+      "100%"
+    ],
+    "texture": "$pressed_button_texture",
+    "$pressed_button_texture|default": "textures/cool/lol_hover",
+     "$text_color":[ 1.0, 1.0, 1.0 ], 
+       "$has_hover_text": true,
+    "layer": 5,
+    "$pressed": true,
+    "anims": ["@lol.scale_big"]
+  },
+  "main_menu_button_locked@lol.main_menu_button_image": {
+    "$locked": true,
+    "texture": "textures/cool/lol_locked"
+  },
+  "lol@common.button": {
+    "size": [
+      102,
+      14
+    ],
+    "controls": [
+      {
+        "default@lol.main_menu_button_default": {}
+      },
+      {
+        "hover@lol.main_menu_button_hover": { "$button_text_color":[ 1.0, 1.0, 1.0 ] }
+      },
+      {
+        "pressed@lol.main_menu_button_pressed": {}
+      }
+    ]
+  },
+  "black_section_toggle_base": {
+    "type": "label",
+    "size": [
+      145,
+      30
+    ],
+    "text": "$button_text",
+    "font_type": "smooth",
+    "anchor_from":"left_middle",
+    "anchor_to":"left_middle",
+    "layer": -30,
+    "controls": [
+      {
+        "panel@lol.black_section_panel": {
+          "layer": 32
+        }
+      }
+    ]
+  },
+  "black_section_panel": {
+    "type": "panel",
+    "size": "$size",
+    "$size|default": [
+      "100%+8px",
+      20
+    ],
+    "$default_alpha": 0,
+    "$pressed_button_texture": "textures/cool/lol_hover",
+    "$button_text_color":[ 1.0, 1.0, 1.0 ], 
+    "$unchecked_control": "lol.main_menu_button_default",
+    "$checked_control": "lol.main_menu_button_pressed",
+    "$unchecked_hover_control": "lol.main_menu_button_hover",
+    "$checked_hover_control": "lol.main_menu_button_hover",
+    "radio_to_toggle_group": true,
+    "$radio_toggle_group": true,
+    "$toggle_name": "navigation_tab",
+    "$toggle_group_default_selected": "$default_selector_toggle_index",
+    "$toggle_view_binding_name|default": "this_toggle",
+    "$template_toggle|default": "common_toggles.light_template_toggle",
+    "$left_tab|default": false,
+    "$right_tab|default": false,
+    "$button_mappings": [
+      {
+        "from_button_id": "button.menu_select",
+        "to_button_id": "button.menu_select",
+        "mapping_type": "pressed"
+      },
+      {
+        "from_button_id": "button.menu_ok",
+        "to_button_id": "button.menu_ok",
+        "mapping_type": "focused"
+      },
+      {
+        "ignored": "(not $right_tab)",
+        "from_button_id": "button.menu_tab_right",
+        "to_button_id": "button.menu_ok",
+        "mapping_type": "global",
+        "scope": "view"
+      },
+      {
+        "ignored": "(not $left_tab)",
+        "from_button_id": "button.menu_tab_left",
+        "to_button_id": "button.menu_ok",
+        "mapping_type": "global",
+        "scope": "view"
+      }
+    ],
+    "controls": [
+      {
+        "$toggle_view_binding_name@$template_toggle": {}
+      }
+    ]
+  }
+}

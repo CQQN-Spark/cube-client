@@ -1,0 +1,159 @@
+{
+"namespace": "tabbed_upsell",
+
+"tabbed_upsell_screen@common.base_screen": {
+"button_mappings": [
+{
+"from_button_id": "button.menu_cancel",
+"to_button_id": "button.menu_exit",
+"mapping_type": "global"
+},
+{
+"from_button_id": "button.menu_tab_left",
+"to_button_id": "button.menu_tab_left",
+"mapping_type": "global",
+"scope": "view"
+},
+{
+"from_button_id": "button.menu_tab_right",
+"to_button_id": "button.menu_tab_right",
+"mapping_type": "global",
+"scope": "view"
+}
+],
+"$screen_content": "tabbed_upsell.main_panel",
+"$screen_bg_content": "common.screen_background"
+},
+
+ "bg": {
+"type": "image",
+"texture": "textures/ui/screen_background",
+"controls": [
+{
+"gradient_render": {
+"type": "custom",
+"renderer": "gradient_renderer",
+"color1": [ 0, 0, 0, 0.5 ],
+"color2": [ 0, 0, 0, 0.7 ],
+"ignored": "$is_holographic"
+}
+}
+]
+},
+
+"credits@settings_common.selector_group_label": {
+"layer": 999,
+"offset": [ 0, -5],
+"alpha": 0.9,
+"font_type": "Raleway-SemiBold",
+"font_size": "medium",
+"size": [ "45%", "default" ],
+"text_alignment": "center",
+"text": "§cCodeBreaker §fClient is A Unique Texture Pack Client. Filled with great and unique features where it makes minecraft better and fun to play. UI by klutzyy and Hjn(ex).",
+"anchor_from": "center",
+"anchor_to": "center"
+},
+"credis@settings_common.selector_group_label": {
+"layer": 999,
+"offset": [ 0, 30 ],
+"alpha": 0.9,
+"font_type": "Raleway-SemiBold",
+"font_size": "medium",
+"size": [ "45%", "default" ],
+"text_alignment": "center",
+"text": "• v4 Changelog •",
+"anchor_from": "center",
+"anchor_to": "center"
+},
+"creedis@settings_common.selector_group_label": {
+"layer": 999,
+"offset": [ 0, 45 ],
+"alpha": 0.9,
+"font_type": "Raleway-SemiBold",
+"font_scale_factor": 1.0,
+"size": [ "45%", "default" ],
+"text_alignment": "center",
+"text": "§a+ New, updated extensions and modifications",
+"anchor_from": "center",
+"anchor_to": "center"
+},
+"creeedis@settings_common.selector_group_label": {
+"layer": 999,
+"offset": [ 0, 55 ],
+"alpha": 0.9,
+"font_type": "Raleway-SemiBold",
+"font_scale_factor": 1.0,
+"size": [ "45%", "default" ],
+"text_alignment": "center",
+"text": "§a+ New UI Switcher",
+"anchor_from": "center",
+"anchor_to": "center"
+},
+"creeeedis@settings_common.selector_group_label": {
+"layer": 999,
+"offset": [ 0, 65 ],
+"alpha": 0.9,
+"font_type": "Raleway-SemiBold",
+"font_scale_factor": 1.0,
+"size": [ "45%", "default" ],
+"text_alignment": "center",
+"text": "§a+ New Start-up UI",
+"anchor_from": "center",
+"anchor_to": "center"
+},
+"creeeedisr@settings_common.selector_group_label": {
+"layer": 999,
+"offset": [ 0, 75 ],
+"alpha": 0.9,
+"font_type": "Raleway-SemiBold",
+"font_scale_factor": 1.0,
+"size": [ "45%", "default" ],
+"text_alignment": "center",
+"text": "§a+ New Background For Lite",
+"anchor_from": "center",
+"anchor_to": "center"
+},
+"creeeeedis@settings_common.selector_group_label": {
+"layer": 999,
+"offset": [ 0,91 ],
+"alpha": 0.9,
+"font_type": "Raleway-SemiBold",
+"font_scale_factor": 1.0,
+"size": [ "45%", "default" ],
+"text_alignment": "center",
+"text": "§c- Removed Default Panorama for Now",
+"anchor_from": "center",
+"anchor_to": "center"
+},
+"main_panel": {
+"type": "panel",
+"controls": [
+{ "bg@bg": {} },
+{ "CB_LOGO@lounge_progress.codeanim": { "offset": [ 0, -69 ],"size":[120,120] }},
+{"texti@creedis":{}},
+{"tessjxti@creeedis":{}},
+{"tejeuexti@creeeedis":{}},
+{"tejdjweuexti@creeeedisr":{}},
+{"tedjsjexti@creeeeedis":{}},
+{"labels@Main_Screen_Render.Labels":{}},
+{"credits@credits":{}},
+{"tsxtiii@credis":{}},
+{"exit_button@Main_Screen_Render.exit": {}}
+]
+},
+
+"keyboard_helpers": {
+"type": "panel",
+"anchor_from": "bottom_middle",
+"anchor_to": "bottom_middle",
+"offset": [ -66, "-4px" ],
+"size": [ "100%c", 10 ],
+"layer": 10,
+"visible": "($win10_edition and $is_holographic)",
+"$keyboard_helper_visible_binding": "#edu_keyboard_helper_visible",
+"$ignore_image": true,
+"controls": [
+{ "keyboard_helper_keys@common.keyboard_helper_keys": {} }
+]
+}
+}

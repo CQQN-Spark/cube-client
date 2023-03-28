@@ -1,0 +1,20 @@
+{
+  "format_version": 2,
+  "header": {
+    "description": "A resource pack client that aims to make minecraft better. This may not increase your FPS and is made for the purpose of adding cleaner textures, better/aesthetic UI and customization. Credits ( Start-up screen concept - AmBro, Better Textures - Trivial Tweaks ).",
+    "name": "CodeBreaker Client v4",
+    "uuid": "e13f7c13-1254-4e53-bbdc-60c81725f190",
+    "version": [1, 0, 0],
+    "min_engine_version": [1, 16, 0]
+  },
+  "modules": [
+    {
+      "type": "resources",
+      "uuid": "ba031731-3ebf-7b12-9a7c-a13867a7f54f",
+      "version": [1, 0, 0]
+    }
+  ]
+        
+        
+         
+}

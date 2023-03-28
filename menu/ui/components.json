@@ -1,0 +1,274 @@
+//For Lounge
+{
+  "namespace": "new_start_screen",
+  "base_screen@common.base_screen": {
+
+    "$screen_animations": [],
+    "$screen_content": "new_start_screen.Lounge_components",
+    "$screen_bg_content": "lounge_progress.codeanim2"
+  },
+   "labelz": {
+    "type": "label",
+    "font_type": "default",
+    "size": [ "default", 10 ],
+    "color": [ 1.0, 1.0, 1.0 ],
+    "shadow": false,
+    "font_scale_factor": 1.0,
+    "text": "CodeBreaker Client v2"
+  },
+   "version": {
+    "type": "label",
+    "color": [ 1.0, 1.0, 1.0 ],
+    "text": "#version",
+    "font_type": "default",
+    "size": [ "default", 10 ],
+    "font_scale_factor":1.0,
+    "max_size": [ "100%", "100%" ],    
+    "offset": [ 0, 0 ],
+    "bindings": [
+      {
+        "binding_name": "#version"
+      }
+    ]
+  },
+ "background": {
+    "type": "image",
+    "texture": "menu/components/startlogo",
+    "size": [120,120 ],
+    "layer": 20,
+    "alpha": "@new_start_screen.codewait"
+  },
+
+  "cblogo": {
+    "type": "image",    
+    "layer": 35,
+    "size":[120,120],
+   "texture":"menu/components/cblogow",
+   "alpha":"@new_start_screen.logoalpha"
+
+  },
+
+  "welcometxt": {
+    "type": "label",
+    "font_type": "Roboto-Regular",
+    "color": "$main_header_text_color",
+    "layer": 103,
+    "shadow": true,
+    "offset": [ 75, 20],
+    "text": "#gamertag_label",
+    "font_scale_factor": 1.1,
+    "alpha": "@new_start_screen.textalpha",
+     "bindings": [
+            {
+              "binding_name": "#gamertag_label"
+            }
+        ],
+    "controls": [
+      {
+        "undertext": {
+          "type": "label",
+          "font_type": "Roboto-Regular",
+          "color": "$main_header_text_color",
+          "layer": 103,
+          "shadow": true,
+          "offset": [ -70, 0],
+          "text": "Welcome,",
+          "font_scale_factor": 1.1,
+          "alpha": "@new_start_screen.textalpha"
+        }
+      }
+    ]
+  },
+ "infotxt": {
+    "type": "label",
+    "font_type": "Roboto-Regular",
+    "color": "$main_header_text_color",
+    "layer": 103,
+    "shadow": true,
+    "anchor_from":"bottom_left",
+    "anchor_to":"bottom_left",
+    "offset": [ "-70%", -30],
+    "text": "Join Our §9Discord§f! §nhttps://discord.gg/zfDPRhPJzj §f[§a12.7k Members!§f]",
+    "font_scale_factor": 1.1,
+    "anims": ["@new_start_screen.infooooo1"]},
+
+  "infooooo1": {
+    "anim_type": "wait",
+    "duration": 7,
+   "next": "@new_start_screen.info1"
+  },
+  
+   "info1": {
+  "anim_type": "offset",
+    "easing": "linear",
+    "from": [ "-70%", -30 ],
+    "to": [ 0, -30 ],
+    "duration": 3,
+    "next": "@new_start_screen.infoo2"
+  },
+      "infoo2": {
+    "anim_type": "wait",
+    "duration": 5,
+   "next": "@new_start_screen.infooo3"
+  },
+ 
+    "infooo3": {
+  "anim_type": "offset",
+    "easing": "linear",
+    "from": [ 0, -30 ],
+    "to": [ "-70%", -30 ],
+    "duration": 3
+  
+  },
+  "loadmenu": {
+    "type": "panel",
+    
+    "controls": [
+      {
+        "background@new_start_screen.background": { "offset":[40,0] }
+      },
+     {"rxjsus@new_start_screen.infotxt":{}}, {"cblogo@new_start_screen.cblogo":{"offset":[0,0]}},
+      
+      {
+        "welcometxt@new_start_screen.welcometxt": {}
+      }
+    ]
+  },
+
+  "codewait": {
+    "anim_type": "alpha",
+    "easing": "in_out_quad",
+    "duration": 1.0,
+    "from": 0.0,
+    "to": 0.0,
+    "next": "@new_start_screen.codealpha"
+  },
+  
+   "codealpha": {
+    "anim_type": "alpha",
+       "easing": "in_out_quad",
+    "duration": 0.5,
+    "from":0.0,
+    "to":1.0,
+   "next": "@new_start_screen.codewait2"
+  },
+
+  "codemove": {
+   "anim_type": "offset",
+    "easing": "linear",
+    "from": [ 0, 0 ],
+    "to": [ 40, 0 ],
+    "duration": 0.5,
+    "next": "@new_start_screen.codewait2"
+
+  },
+    "codewait2": {
+    "anim_type": "wait",
+    "duration": 3.0,
+    "next": "@new_start_screen.codealpha2"
+  },
+
+    "codealpha2": {
+       "anim_type": "alpha",
+    "easing": "in_out_quad",
+    "duration": 0.5,
+    "from": 1.0,
+    "to": 0  },
+
+
+  "logoalpha": {
+    "anim_type": "alpha",
+    "easing": "in_out_quad",
+    "duration": 0.5,
+    "from": 0,
+    "to": 1.0,
+    "next": "@new_start_screen.logooffset"
+  },
+
+  "logooffset": {
+    "anim_type": "offset",
+   "easing": "in_out_quad",
+    "from": [ 0, 0 ],
+    "to": [ -55, 0 ],
+    "duration": 1.0,
+    "next": "@new_start_screen.logowait"
+  },
+
+  "logowait": {
+    "anim_type": "wait",
+    "duration": 3,
+    "next": "@new_start_screen.logoalpha2"
+  },
+
+  "logoalpha2": {
+    "anim_type": "alpha",
+    "easing": "in_out_quad",
+    "duration": 0.5,
+    "from": 1.0,
+    "to": 0
+  },
+
+  "textalpha": {
+    "anim_type": "alpha",
+    "duration": 1.5,
+    "from": 0,
+    "to": 0,
+    "next": "@new_start_screen.textalpha2"
+  },
+
+  "textalpha2": {
+    "anim_type": "alpha",
+    "easing": "linear",
+    "duration": 0.5,
+    "from": 0,
+    "to": 1.0,
+    "next": "@new_start_screen.textwait"
+  },
+
+  "textwait": {
+    "anim_type": "wait",
+    "duration": 2.5,
+    "next": "@new_start_screen.textalpha3"
+  },
+
+  "textalpha3": {
+    "anim_type": "alpha",
+    "easing": "in_out_quad",
+    "duration": 0.5,
+    "from": 1.0,
+    "to": 0
+  },
+
+  "codebreaker_button@cb_buttons.custom_content_button_white": {
+    "$pressed_button_name": "button.menu_buy_game",
+    "anchor_from": "bottom_middle",
+    "anchor_to": "bottom_middle",
+    "size": [27, 27],
+    "offset":[-15,-7],
+    "$default_button_texture|default": "menu/components/bar",
+    "$hover_button_texture|default": "menu/components/bar",
+    "$pressed_button_texture|default": "menu/components/bar",
+    "$button_content": "Main_Screen_Render.CB_ICON"
+    },
+    
+  "Lounge_components": {
+    "type": "panel",
+    "controls":[ {"buttons@pop_updefault.pop_updefault_panel":{}},{"mdjsjwjs@Loungemain":{}},{"djxjsjd@pop_up.pop_up_panel":{}},{"djxjsdjsjjd@pop_upold.pop_upold_panel":{}},{"djxsjsjajsdjsjjd@pop_uphjn.pop_uphjn_panel":{}},{"butrjwtons@pop_upbutton.pop_upbutton_panel":{}} ]},
+    
+    
+ "Loungemain":{"type":"panel","controls":[
+ {"@new_start_screen.codebreaker_button":{"layer":40}},
+ {"@loadmenu":{}},
+ {"@Main_Screen_Render.Labels":{}},  {"menubutton@pop_upbutton.menubutton":{}}
+ 
+ 
+ 
+    
+
+
+    ]
+  }
+  
+
+  
+}

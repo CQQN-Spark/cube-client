@@ -1,0 +1,337 @@
+/********************************************************
++*   (c) Mojang. All rights reserved                       *
++*   (c) Microsoft. All rights reserved.                   *
++*********************************************************/
+
+{
+  "namespace": "chest",
+  	"player_renderer": {
+    "type": "custom",
+    "renderer": "live_player_renderer",
+    "size": [ 30, 30 ],
+    "layer": 0,
+    "anchor_from": "center", 
+    "anchor_to": "center", 
+    "offset": [ -110,-20]
+	},
+ 
+ "tigerui_icon": {
+   "type": "image",
+   "texture": "textures/mainmenu/screen_icon",
+   "size": [ 150, 30 ],
+   "offset": [ -5, 3 ],
+   "anchor_from": "bottom_right",
+   "anchor_to": "bottom_right"
+  },
+  
+  "common_panel_chest": {
+    "type": "panel",
+    "$dialog_background|default": "common.dialog_background_opaque",
+  
+    "$show_close_button|default": true,
+    "$close_button_offset|default": [ 0, 0 ],
+    "$close_button_layer|default": 2,
+    "$use_compact_close_button|default": false,
+    "$show_divider|default": false,
+    "$divider_offset|default": [ "42.5%", "22px" ],
+    "$divider_visible_binding_name|default": "",
+    "$divider_visible_binding_type|default": "none",
+    "$divider_size|default": [ "5px", "100% - 29px" ],
+    "controls": [
+      {
+        "bg_image@$dialog_background": {
+          "layer": 1
+        }
+      },
+      {
+        "dialog_divider@common.dialog_divider": {
+          "visible": "$show_divider",
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "offset": "$divider_offset",
+          "size": "$divider_size",
+          "bindings": [
+            {
+              "binding_name": "$divider_visible_binding_name",
+              "binding_name_override": "#visible",
+              "binding_type": "$divider_visible_binding_type"
+            }
+          ]
+        }
+      },
+      {
+        "close_button_holder": {
+          "type": "panel",
+          "ignored": "(not $show_close_button)",
+          "controls": [
+            {
+              "close@common.close_button": {
+                "layer": "$close_button_layer",
+                "offset": [1,-1],
+                "ignored": "$use_compact_close_button"
+              }
+            },
+            {
+              "compact_close@common.compact_close_button": {
+                "layer": "$close_button_layer",
+                "offset": [1,-1],
+                "ignored": "(not $use_compact_close_button)"
+              }
+            }
+          ],
+          "bindings": [
+            {
+              "binding_name": "#close_button_visible",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "chest_label": {
+    "type": "label",
+    "offset": [ 7, -1 ],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "text": "$container_title",
+    "size": [ "90%", "default" ],
+    "color": "$title_text_color",
+    "layer": 2
+  },
+
+  "small_chest_grid": {
+    "type": "grid",
+    "size": [ 162, 54 ],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "grid_dimensions": [ 9, 3 ],
+    "grid_item_template": "chest.chest_grid_item",
+    "collection_name": "container_items"
+  },
+
+  "large_chest_grid": {
+    "type": "grid",
+    "size": [ 162, 108 ],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "grid_dimensions": [ 9, 6 ],
+    "grid_item_template": "chest.chest_grid_item",
+    "collection_name": "container_items"
+  },
+
+  "small_chest_panel_top_half": {
+    "type": "panel",
+    "offset": [ 0, 0 ],
+    "size": [ "100%", "50%" ],
+    "anchor_to": "top_left",
+    "anchor_from": "top_left",
+    "controls": [
+      { "chest_label@chest.chest_label": {"offset": [ 8, 5 ] } },
+      {
+        "small_chest_grid@chest.small_chest_grid": {
+          "offset": [ 7, 17 ]
+        }
+      }
+    ]
+  },
+
+  "large_chest_panel_top_half": {
+    "type": "panel",
+    "size": [ "100%", 132 ],
+    "offset": [ 0, 0 ],
+    "anchor_to": "top_left",
+    "anchor_from": "top_left",
+    "controls": [
+      { "chest_label@chest.chest_label": { "offset": [8,5] } },
+      {
+        "large_chest_grid@chest.large_chest_grid": {
+          "offset": [ 7, 17 ]
+        }
+      }
+    ]
+  },
+
+  //// #endregion
+
+  ////---------------------------------------------------------------------------
+  //// #region screen
+  ////---------------------------------------------------------------------------
+
+  "small_chest_panel": {
+    "type": "panel",
+    "controls": [
+    { "jajajajaj@tigerui_icon": {}},
+      { "container_gamepad_helpers@common.container_gamepad_helpers": {} },
+      { "plyer_renderer@chest.player_renderer": {"layer": 1337} },       {
+        "flying_item_renderer@common.flying_item_renderer": {
+          "layer": 14
+        }
+      },
+      { "selected_item_details_factory@common.selected_item_details_factory": {} },
+      {
+        "root_panel@common.root_panel": {
+          "layer": 1,
+          "size": [ 176, 167 ],
+          "controls": [
+            { "common_panel@common.common_panel_combined2": {} },
+            {
+              "chest_panel": {
+                "type": "panel",
+                "layer": 5,
+                "controls": [
+                  { "small_chest_panel_top_half@chest.small_chest_panel_top_half": {} },
+                  { "inventory_panel_bottom_half_with_label@common.inventory_panel_bottom_half_with_label": { "offset": [0,-3] } },
+                  { "hotbar_grid@common.hotbar_grid_template": { "offset": [ 0,-7] } },
+                  { "inventory_take_progress_icon_button@common.inventory_take_progress_icon_button": {} }
+                ]
+              }
+            },
+            { "inventory_selected_icon_button@common.inventory_selected_icon_button": {} },
+            { "gamepad_cursor@common.gamepad_cursor_button": {} }
+          ]
+        }
+      }
+    ]
+  },
+  
+  "selected_item_details@common.selected_item_details": {
+    "offset": [ 0, 0 ]
+  },
+
+  "large_chest_panel": {
+    "type": "panel",
+    "controls": [
+      { "jajajajajajaja@tigerui_icon": {}},
+    { "plyer_renderer@chest.player_renderer": {"layer": 1337} },   { "container_gamepad_helpers@common.container_gamepad_helpers": {} },
+      {
+        "flying_item_renderer@common.flying_item_renderer": {
+          "layer": 11
+        }
+      },
+      {
+        "selected_item_details_factory@common.selected_item_details_factory": {
+          "control_name": "@chest.selected_item_details"
+        }
+      },
+      {
+        "root_panel@common.root_panel": {
+          "size": [ 176, 221 ],
+          "layer": 1,
+          "controls": [
+            { "common_panel@common.common_panel_combined2": {} },
+            {
+              "chest_panel": {
+                "type": "panel",
+                "layer": 5,
+                "controls": [
+                  { "large_chest_panel_top_half@chest.large_chest_panel_top_half": {} },
+                  { "inventory_panel_bottom_half_with_label@common.inventory_panel_bottom_half_with_label": { "offset": [0,-3] } },
+                  { "hotbar_grid@common.hotbar_grid_template": { "offset": [ 0,-7] } },
+                  { "inventory_take_progress_icon_button@common.inventory_take_progress_icon_button": {} }
+                ]
+              }
+            },
+            { "inventory_selected_icon_button@common.inventory_selected_icon_button": {} },
+            { "gamepad_cursor@common.gamepad_cursor_button": {} }
+          ]
+        }
+      }
+    ]
+  },
+
+  "ender_chest_panel@chest.small_chest_panel": {
+  },
+
+  "shulker_box_panel@chest.small_chest_panel": {
+  },
+
+  "barrel_panel@chest.small_chest_panel": {
+  },
+
+  "small_chest_screen@common.inventory_screen_common": {
+    "$close_on_player_hurt|default": true,
+    "$show_background": false,
+      	"force_render_below":true,
+    "close_on_player_hurt": "$close_on_player_hurt",
+    "variables": [
+      {
+        "requires": "$desktop_screen",
+        "$screen_content": "chest.small_chest_panel",
+        "$screen_bg_content": "common.screen_background"
+      },
+      {
+        "requires": "$pocket_screen",
+        "$screen_content": "pocket_containers.small_chest_panel"
+      }
+    ]
+  },
+
+  "large_chest_screen@common.inventory_screen_common": {
+    "$close_on_player_hurt|default": true,
+        "$show_background": false,
+          	"force_render_below":true,
+    "close_on_player_hurt": "$close_on_player_hurt",
+    "variables": [
+      {
+        "requires": "$desktop_screen",
+        "$screen_content": "chest.large_chest_panel",
+        "$screen_bg_content": "common.screen_background"
+      },
+      {
+        "requires": "$pocket_screen",
+        "$screen_content": "pocket_containers.large_chest_panel"
+      }
+    ]
+  },
+
+  "ender_chest_screen@common.inventory_screen_common": {
+    "$close_on_player_hurt|default": true,
+        "$show_background": false,
+    "close_on_player_hurt": "$close_on_player_hurt",
+      	"force_render_below":true,
+    "variables": [
+      {
+        "requires": "$desktop_screen",
+        "$screen_content": "chest.ender_chest_panel",
+        "$screen_bg_content": "common.screen_background"
+      },
+      {
+        "requires": "$pocket_screen",
+        "$screen_content": "pocket_containers.ender_chest_panel"
+      }
+    ]
+  },
+
+  "shulker_box_screen@chest.small_chest_screen": {
+    "$close_on_player_hurt": true,
+      	"force_render_below":true,
+    "variables": [
+      {
+        "requires": "$desktop_screen",
+        "$screen_content": "chest.shulker_box_panel",
+        "$screen_bg_content": "common.screen_background"
+      },
+      {
+        "requires": "$pocket_screen",
+        "$screen_content": "pocket_containers.shulker_box_panel"
+      }
+    ]
+  },
+
+  "barrel_screen@chest.small_chest_screen": {
+    "$close_on_player_hurt": true,
+      	"force_render_below":true,
+    "variables": [
+      {
+        "requires": "$desktop_screen",
+        "$screen_content": "chest.barrel_panel",
+        "$screen_bg_content": "common.screen_background"
+      },
+      {
+        "requires": "$pocket_screen",
+        "$screen_content": "pocket_containers.barrel_panel"
+      }
+    ]
+  }
+}

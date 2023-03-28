@@ -1,0 +1,316 @@
+{
+	"namespace": "pause",
+	"pause_screen@screen_ui.base_screen": {
+		"cache_screen": true,
+		"force_render_below":true,
+		"$screen_animations": [
+			"@common.screen_exit_animation_push_fade",
+			"@common.screen_exit_animation_pop_fade",
+			"@common.screen_entrance_animation_push_fade",
+			"@common.screen_entrance_animation_pop_fade"
+		],
+		"button_mappings": [
+			{
+				"from_button_id": "button.menu_cancel",
+				"to_button_id": "button.menu_continue",
+				"mapping_type": "global"
+			},
+			{
+				"from_button_id": "button.controller_start",
+				"to_button_id": "button.menu_continue",
+				"mapping_type": "global"
+			},
+			{
+				"from_button_id": "button.menu_vr_realign",
+				"to_button_id": "button.menu_vr_realign",
+				"mapping_type": "global",
+				"scope": "controller"
+			},
+			{
+				"from_button_id": "button.controller_select",
+				"to_button_id": "button.to_profile_or_skins_screen",
+				"mapping_type": "global",
+				"scope": "controller"
+			},
+			{
+				"from_button_id": "button.menu_tab_left",
+				"to_button_id": "button.menu_tab_left",
+				"mapping_type": "global",
+				"scope": "view"
+			},
+			{
+				"from_button_id": "button.menu_tab_right",
+				"to_button_id": "button.menu_tab_right",
+				"mapping_type": "global",
+				"scope": "view"
+			}
+		],
+		"$screen_content": "pause.codepause"
+	},
+	"codepause": {
+		"type": "panel",
+	
+	
+		"controls": [{"codepusepanel@pause.codepausepanel":{}},
+				{"info_panel@pause.info_panel": {}}, {"music_player_2_panel@music_player.music_player_panel": {"anchor_from":"bottom_right","anchor_to":"bottom_right" } },	
+		
+				{
+				"gamepad_helpers@pause.gamepad_helpers": {}
+			},
+			{
+				"keyboard_helpers@pause.keyboard_helpers": {}
+			}
+		
+		]
+	},
+	"codepausepanel": {
+		"type": "panel",
+	
+		"controls": [	{"codepanl@pause.codepanel":{}},{"dark":{"type":"image","texture":"menu/components/dark","layer":-5,"size":[10000,10000]}},{"codee@Main_Screen_Render.CB_LOGO":{"offset":[0,-80]}}
+]			},
+			
+
+		
+	"label_panel": {
+    "type": "label",
+    "size": [ "100%", "default" ],
+    "layer": 100,
+    "$text_font_scale_factor|default": 1,
+    "font_scale_factor": "$text_font_scale_factor",
+    "text": "$text",
+    "color": "$main_header_text_color"
+  },
+  
+       
+     
+
+  "cserver@resume1_button.resume1_button": {
+    "$pressed_button_name": "button.menu_server_store",
+    "size":[90,20],
+    "$button_text": "Server Store",
+    "bindings": [
+      {
+        "binding_name": "#invite_button_visible",
+        "binding_name_override": "#enabled",
+        "binding_type": "global"
+      }
+    ]
+
+  },
+ 
+ 
+   "cplayer_button@resume1_button.resume1_button": {
+    "$button_text": "Players",
+    "$button_tts_header": "accessibility.pause.permissions",
+    "size":[90,20],
+    "button_mappings": [
+      {
+        "from_button_id": "button.menu_select",
+        "to_button_id": "button.menu_permission",
+        "mapping_type": "pressed"
+      },
+      {
+        "from_button_id": "button.menu_ok",
+        "to_button_id": "button.menu_permission",
+        "mapping_type": "focused"
+      }
+    ],
+    "bindings": [
+      {
+        "binding_type": "collection_details",
+        "binding_collection_name": "_collection"
+      }
+    ]
+  },
+
+  
+   "cachievements@resume1_button.resume1_button": {
+    "$pressed_button_name": "button.menu_achievements",
+    "size":[90,20],
+    "$button_text": "Advancements"
+
+  }, "cprofile@resume1_button.resume1_button": {
+    "$pressed_button_name": "button.to_profile_or_skins_screen",
+     "size":[90,20],
+    "$button_text": "Profile",
+      
+
+    "$focus_id": "profile_button",
+    "$button_tts_header": "accessibility.start.profile"
+  },
+  
+
+  "csettings@resume1_button.resume1_button": {
+    "$pressed_button_name": "button.menu_settings",
+     "size":[186,20],
+      
+
+    "$button_text": "Game Options"
+  },
+  "cplayer@resume1_button.resume1_button": {
+    "$button_text": "Players",
+      "size":[90,20], 
+
+    "$button_tts_header": "accessibility.pause.permissions",
+    "button_mappings": [
+      {
+        "from_button_id": "button.menu_select",
+        "to_button_id": "button.menu_permission",
+        "mapping_type": "pressed"
+      },
+      {
+        "from_button_id": "button.menu_ok",
+        "to_button_id": "button.menu_permission",
+        "mapping_type": "focused"
+      }
+    ],
+    "bindings": [
+      {
+        "binding_type": "collection_details",
+        "binding_collection_name": "_collection"
+      }
+    ]
+  },
+
+  
+ "cplay@resume1_button.resume1_button": {
+    "$pressed_button_name": "button.menu_continue",
+     "size":[90,20],
+      
+
+    "$button_focus_precedence": 1,
+    "focus_change_up": "button.menu_quit",
+    "$button_text": "Back to Game"
+  },
+
+
+  "cexit@resume1_button.resume1_button": {
+    "$pressed_button_name": "button.menu_quit",
+     "size":[90,20],
+
+    "variables": [
+      {
+        "requires": "(not $is_secondary_client)",
+        "$button_text": "Disconnect"
+      },
+      {
+        "requires": "$is_secondary_client",
+        "$button_text": "Disconnect"
+      }
+    ]
+ },
+   
+                    
+   
+    "top_panelbg":{
+    "type":"image",
+    "texture":"menu/components/dmodd",
+    "layer": 10,
+    "size":[160,160],
+    "offset":[0,-70]
+    },
+      "line_break": {
+    "type": "panel",
+    "controls": [
+      {
+        "line_break_image": {
+          "type": "image",
+          "texture": "textures/ui/list_item_divider_line_light",
+          "layer":1,
+          "color": [ 0.37, 0.4, 0.41 ],
+          "anchor_from": "center",
+          "anchor_to": "center"
+        }
+      }
+    ]
+  },
+  "horizontal_padding": {
+    "type": "panel",
+    "size": [ 10, 0 ]
+  },
+  "vertical_padding": {
+  "type": "panel",
+  "size": [ "100%", 7 ]
+  },
+ 
+ 
+  	"info_panel@pause.pause_screen_border": {
+		"size": [
+			150,
+			"100%"
+		],
+		"anchor_from": "right_middle",
+		"anchor_to": "right_middle",
+		"controls": [
+			{
+				"info_panel_background@pause.info_panel_background": {}
+			},
+			{
+				"info_panel_list@pause.info_panel_content_list": {}
+			}
+		],
+		"bindings": [
+			{
+				"binding_type": "view",
+				"source_control_name": "player_list",
+				"source_property_name": "#toggle_state",
+				"target_property_name": "#visible"
+			}
+		]
+	},
+	"Playerlist": {
+		"type": "label",
+		"layer": 2,
+		"text": "Players",
+		"font_type": "Roboto-Regular",
+		"color": [ 0.8, 0.8, 0.8 ],
+		"font_scale_factor":0.8
+  
+	
+	},
+  		"show_player_list_toggle@common_tabs.base_tab": {
+					"layer": 1337,
+					"$toggle_name": "Button",
+					"$unchecked_default_image": "textures/resume1/resume1_button",
+					"$unchecked_hover_image": "textures/resume1/resume1_button_hover",
+					"$checked_default_image|default": "textures/resume1/resume1_button",
+					"$checked_hover_image|default": "textures/resume1/resume1_button_hover",
+					"$unchecked_locked_image": "textures/resume1/resume1_button",
+					"$unchecked_locked_hover_image": "textures/resume1/resume1_button_hover",
+					"$checked_locked_image|default": "textures/resume1/resume1_button",
+					"$checked_locked_hover_image|default": "textures/resume1/resume1_button_hover",
+					"$tab_view_binding_name": "player_list",
+					"anchor_from": "bottom_right",
+					"anchor_to": "bottom_right",
+					"size": [
+						90,
+						20
+					],
+					"$tab_content": "pause.Playerlist"
+				},
+			
+  
+    "codepanel": {
+    "type": "panel",
+    "anchor_from": "center",
+    "anchor_to": "center",
+    "offset":[0,0],
+    "size": [ 210,150],
+    "controls": [{"codeb@codebuttons":{}}]},
+     
+    
+    
+    "codebuttons":{
+    "type":"panel",
+    "size":[186,102],
+    "offset":[0,16],
+    "controls":[ 
+    {"cpla@cplay":{"anchor_from":"top_left","anchor_to":"top_left","offset":[0,5]}},
+  {"csrver@cserver":{"anchor_from":"top_right","anchor_to":"top_right","offset":[0,74]}},
+ {"cplaer@show_player_list_toggle":{"anchor_from":"top_left","anchor_to":"top_left","offset":[0,51]}}, {"cproile@cprofile":{"anchor_from":"top_right","anchor_to":"top_right","offset":[0,51]}},  
+{"cacievements@cachievements":{ "anchor_from":"top_left","anchor_to":"top_left","offset":[0,74] }},
+    
+    {"csttings@csettings":{"anchor_from":"top_middle","anchor_to":"top_middle","offset":[0,28]}}, 
+    {"cext@cexit":{"anchor_from":"top_right","anchor_to":"top_right","offset":[0,5]}}]}}
+    
+ 

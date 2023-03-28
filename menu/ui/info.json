@@ -1,0 +1,45 @@
+//For Lounge
+{
+  "namespace":"Lounge_info",
+
+     "gamerpic": {
+        "type": "image",
+        "size": [ 18, 18 ],
+        "layer": 20,
+        "bindings": [
+          {
+            "binding_name": "#gamerpic_texture_path",
+            "binding_name_override": "#texture"
+          },
+          {
+            "binding_name": "#gamerpic_texture_location_type",
+            "binding_name_override": "#texture_file_system"
+          }
+        ]
+      },
+        "gamertag": {
+          "type": "label",
+          "size": [ "100%", 13 ],
+          "layer": 10,
+          "text": "#gamertag_label",
+          "font_scale_factor": 1.0,
+          "font_type": "smooth",
+          "text_alignment": "left",
+          "bindings": [
+            {
+              "binding_name": "#gamertag_label"
+            }
+        ]
+    },
+    "circle":{
+    "type":"image",
+    "texture":"menu/components/gamerpic",
+    "layer": 1000
+    },
+    "picon":{
+    "type":"panel",
+    "size": [22,22],
+    "controls":[
+    {"gamerpic@Lounge_info.gamerpic":{"anchor_from":"center","anchor_to":"center"}},
+    {"circle@Lounge_info.circle":{"anchor_from":"center","anchor_to":"center","size":[24,24]}}]}
+}

@@ -1,0 +1,260 @@
+
+{
+  "namespace": "pop_upold",
+
+  /*//// Generic Label ////*/
+
+  "generic_label": {
+    "type": "label",
+    "font_scale_factor":1.3,
+    "layer": 36
+  },
+
+  /*//// Toggle Setting up ////*/
+"menuold@pausett.button_toggle2":{
+"$toggle_view_binding_name":"open_pop_upold_toggle",
+"size":[70,20],
+"layer":35,
+"offset":[-5,-25],
+"anchor_to":"right_middle",
+"anchor_from":"right_middle",
+"$toggle_name":"null",
+"$show_text":"Old - Lunar",
+"$hide_text":"Old - Lunar"
+
+},
+"menold@common_tabs.base_tab": {
+					"layer": 30,
+					"$toggle_name": "Button",
+					"$unchecked_default_image": "menu/components/bar",
+					"$unchecked_hover_image": "menu/components/bgg",
+					"$checked_default_image|default": "menu/components/bar",
+					"$checked_hover_image|default": "menu/components/bgg",
+					"$unchecked_locked_image": "menu/components/bar",
+					"$unchecked_locked_hover_image": "menu/components/bgg",
+					"$checked_locked_image|default": "menu/components/bar",
+					"$checked_locked_hover_image|default": "menu/components/bgg",
+					"$tab_view_binding_name": "open_pop_upold_toggle",	
+					"anchor_from":"right_middle","anchor_to":"right_middle","offset":[-5,-25],
+					
+			
+					"size": [
+						20,
+						20
+					]
+		
+				},
+
+  "toggle_panel": {
+    "type": "panel",
+    "$sound_name|default": "random.click",
+    "size": [ "100%", "100%" ],
+    "$radio_toggle_group": true,
+    "$toggle_focus_enabled": true,
+    "$is_back_button|default": false,
+    "$binding_type": "global",
+    "$binding_condition": "once",
+    "$is_custom_button|default": false,
+    "$custom_from_button_id|default": "",
+    "$custom_to_button_id|default": "",
+    "$custom_mapping_type|default": "",
+    
+    "controls": [
+      {
+        "$tab_view_binding_name@common.toggle": {
+          "sound_name": "$sound_name",
+          "size": [ "100%", "100%" ],
+          "button_mappings": [
+            {
+              "ignored": "(not $is_custom_button)",
+              "from_button_id": "$custom_from_button_id",
+              "to_button_id": "$custom_to_button_id",
+              "mapping_type": "$custom_mapping_type",
+              "scope": "$custom_scope"
+            },
+            {
+              "from_button_id": "button.menu_select",
+              "to_button_id": "button.menu_select",
+              "mapping_type": "pressed"
+            },
+            {
+              "from_button_id": "button.menu_ok",
+              "to_button_id": "button.menu_ok",
+              "mapping_type": "focused"
+            },
+            {
+              "ignored": "(not $is_back_button)",
+              "from_button_id": "button.menu_cancel",
+              "to_button_id": "button.menu_select",
+              "mapping_type": "global"
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+
+
+  "pop_upold_button@pop_upold.toggle_panel": {
+    "size": [ 20, 20 ],
+    "layer": 35,
+    "$button_content": "pop_upold.pop_upold_icon",
+    "$unchecked_control": "pop_upold.button_default",
+    "$unchecked_hover_control": "pop_upold.button_hover",
+    "$checked_control": "pop_upold.button_default",
+    "$checked_hover_control": "pop_upold.button_hover",
+    "$toggle_name": "pop_upold_tab",
+    "$toggle_group_forced_index": 1,
+    "$toggle_binding_type": "global",
+    "$tab_view_binding_name": "open_pop_upold_toggle"
+  },
+
+  "pop_upold_icon": {
+    "type": "label",
+    "text":"x",
+     "font_type":"Roboto-Regular",
+    "font_scale_factor":1.3
+  
+  },
+  "pop_upold_iconclose": {
+    "type": "label",
+    "text":"x",
+     "font_type":"Roboto-Regular",
+    "font_scale_factor":1.3
+  
+  },
+
+
+  "button_label": {
+    "type": "label",
+    "text": "$button_text",
+    "color": "$button_text_color"
+  },
+
+  "button_panel": {
+    "type": "panel",
+    "size": [ "100%", "100%" ],
+    "$button_content|default": "pop_upold.button_label",
+    "controls": [
+      { "button_content@$button_content": { "layer": 3 } },
+      { 
+        "button": {
+          "type": "image",
+          "texture": "$button_texture",
+          "layer": 2,
+          "size": [ "100%-2px", "100%-2px" ]
+        }
+      },
+      { 
+        "border": {
+          "type": "image",
+          "layer": 1,
+          "color": "$border_color",
+          "texture": "textures/ui/focus_border_white",
+          "size": [ 0, 0]
+        }
+      }
+    ]
+  },
+
+  "button_default@pop_upold.button_panel": {
+    "$button_text_color": "$light_button_default_text_color",
+    "$button_texture": "menu/components/bar",
+    "$border_color": "$light_border_default_color"
+  },
+
+  "button_hover@pop_upold.button_panel": {
+    "$button_text_color": "$light_button_hover_text_color",
+    "$button_texture": "menu/components/bgg",
+    "$border_color": "$light_border_hover_color"
+  },
+
+ 
+
+  
+
+  "close_button_default": {
+    "type": "image",
+    "layer": 36,
+    "texture": "menu/components/bar"
+  },
+
+  "close_button_hover@pop_upold.close_button_default": {
+    "texture": "menu/components/bgg"
+  },
+
+  /* Menu Buttons */
+
+  /*//// Content Panel ////*/
+
+  "panel_bg": {
+    "type": "image",
+    "texture": "textures/pop_upold_ui/panel_bg",
+    "size": [ 0, 0],
+    "layer": 32,
+    "tiled": true
+  },
+
+  "conntent_panel": {
+    "type": "panel",
+ 
+    "offset": [ 0, 0 ],
+    "size": [ "100%", "100%"],
+    "controls": [
+      { "pop_upold_general@sidecontentdefault.scrolling": { } }
+    ]
+  },
+  "panelanimation": {
+    "anim_type": "offset",
+    "easing": "out_cubic",
+    "duration": 1.0,
+    "from": [ "-100%", 0 ],
+    "to": [ 0, 0 ]
+    
+  },
+
+  /*//// Main Panel ////*/
+
+  "pop_upold_panel": {
+    "type": "panel",
+    "anchor_from":"middle",
+    "size":["100%","100%"],
+    "anchor_to":"middle",
+       "animation_reset_name": "screen_animation_reset", 
+    "controls": [
+      {
+        "bg@common.button": {
+          "size": [ "100%", "100%" ],
+          "layer": 27,
+          "sound_name": "null",
+          "controls": [
+            { "screen_bg@common.screen_background": { "$screen_background_alpha": 0.0 } }
+          ]
+        }
+      },
+      { 
+        "dialog_bg": {
+          "type": "image",
+          "texture": "menu/components/popupbutton","anchor_from":"left_middle","anchor_to":"left_middle",
+          "layer": 20,
+          "alpha":0,
+          "offset":[0,0],
+          "size": [ "100%", "100%" ],    
+          "controls": [                          
+     {"@Lounge_new_button_old.topmain":{}},  {"@Lounge_new_button_old.main_panel":{}}, 
+   {"@lounge_progress.codeanim":{"size":[120,120],"offset":[0,-45]}}
+          ]
+        }
+      }
+    ],
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "open_pop_upold_toggle",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ]
+  }
+}

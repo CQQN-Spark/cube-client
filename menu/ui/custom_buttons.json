@@ -1,0 +1,69 @@
+//For Lounge
+{
+  "namespace":"Lounge_new_button",   
+   
+    "top_panelbg":{
+    "type":"image",
+    "texture":"menu/components/middle",
+    "layer": 1
+    },
+      "line_break": {
+    "type": "panel",
+    "controls": [
+      {
+        "line_break_image": {
+          "type": "image",
+          "texture": "textures/ui/list_item_divider_line_light",
+          "layer":1,
+          "color": [ 0.37, 0.4, 0.41 ],
+          "anchor_from": "center",
+          "anchor_to": "center"
+        }
+      }
+    ]
+  },
+  "horizontal_padding": {
+    "type": "panel",
+    "size": [ 10, 0 ]
+  },
+  "vertical_padding": {
+  "type": "panel",
+  "size": [ "100%", 4]
+  },
+     "main_panel": {
+    "type": "panel",
+    "anchor_from": "center",
+    "anchor_to": "center",
+    "offset":[0,0],
+    "layer":5,
+    "size": [ 255,120],
+    "controls": [{"@lounge_progress.codeanim":{"size":[120,120],"offset":[0,0],"anchor_from":"left_middle","anchor_to":"left_middle"}},
+    {"@pop_up.startbutton":{"anchor_from":"right_middle","anchor_to":"right_middle"}}]},
+     
+    "topmain":{
+    "type":"panel",
+    "size":["100%",32],
+    "anchor_from":"top_middle",
+    "anchor_to":"top_middle",
+   "controls":  [ {"@exit":{"anchor_from":"right_middle","anchor_to":"right_middle","offset":[-15,0]}}]},
+    
+   
+ 
+   "labelz": {
+    "type": "label",
+    "font_type": "smooth",
+    "size": [ "100%", 35],
+    "color": [ 1.0, 1.0, 1.0 ],
+    "shadow": false,
+    "font_scale_factor": 1.6,
+    "text": "CodeBreaker",
+    "layer":50,
+    "anchor_from":"left_middle",
+    "anchor_to":"left_middle",
+    "offset":[20,18]} 
+    
+  
+  
+    
+    
+  }
