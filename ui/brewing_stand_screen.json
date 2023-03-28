@@ -1,0 +1,68 @@
+/********************************************************
++*   (c) Mojang. All rights reserved                       *
++*   (c) Microsoft. All rights reserved.                   *
++*********************************************************/
+
+{
+  "namespace": "brewing_stand",
+
+  "brewing_label": {
+    "type": "label",
+    "offset": [ 0, -3 ],
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "text": "$container_title",
+    "color": "$title_text_color",
+    "layer": 2
+  },
+
+  "brewing_stand_panel": {
+    "type": "panel",
+    "controls": [
+      { "container_gamepad_helpers@common.container_gamepad_helpers": {} },
+      {
+        "flying_item_renderer@common.flying_item_renderer": {
+          "layer": 11
+        }
+      },
+      { "selected_item_details_factory@common.selected_item_details_factory": {} },
+      {
+        "root_panel@common.root_panel": {
+          "layer": 1,
+          "controls": [
+            { "common_panel@common.common_panel_combined2": {} },
+            {
+              "furnace_screen_inventory": {
+                "type": "panel",
+                "layer": 5,
+                "controls": [
+                  { "brewing_panel_top_half@brewing_stand.brewing_panel_top_half": {} },
+                  { "inventory_panel_bottom_half_with_label@common.inventory_panel_bottom_half_with_label": {"offset": [0,-3]} },
+                  { "hotbar_grid@common.hotbar_grid_template": {"offset": [0,-7]} },
+                  { "inventory_take_progress_icon_button@common.inventory_take_progress_icon_button": {} }
+                ]
+              }
+            },
+            { "inventory_selected_icon_button@common.inventory_selected_icon_button": {} },
+            { "gamepad_cursor@common.gamepad_cursor_button": {} }
+          ]
+        }
+      }
+    ]
+  },
+  "brewing_stand_screen@common.inventory_screen_common": {
+    "$close_on_player_hurt|default": true,
+    "close_on_player_hurt": "$close_on_player_hurt",
+    "variables": [
+      {
+        "requires": "$desktop_screen",
+        "$screen_content": "brewing_stand.brewing_stand_panel",
+        "$screen_bg_content": "common.screen_background"
+      },
+      {
+        "requires": "$pocket_screen",
+        "$screen_content": "brewing_stand_pocket.brewing_stand_panel"
+      }
+    ]
+  }
+}

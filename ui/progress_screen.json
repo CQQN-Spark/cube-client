@@ -1,0 +1,32 @@
+{
+ 
+  "world_loading_progress_screen":{"$screen_content":"lounge_progress.lounge_content","$screen_bg_content": "lounge_progress.codeanimblur"},
+  
+ "overworld_loading_progress_screen":{"$screen_content":"lounge_progress.lounge_content","$screen_bg_content":"lounge_progress.dark","$screen_animations":[]},
+ "world_saving_progress_screen": {
+    "$screen_bg_content": "lounge_progress.codeanim2",
+    "$screen_content": "lounge_progress.lounge_content",
+    "$use_loading_bars": false,
+    "$screen_animations": [ ],
+    "$background_animations": [ ]
+  },
+
+"nether_loading_progress_screen":{"$screen_content":"lounge_progress.lounge_content","$screen_bg_content":"lounge_progress.dark","$screen_animations":[]},
+
+
+"theend_loading_progress_screen":{"$screen_content":"lounge_progress.lounge_content","$screen_bg_content":"lounge_progress.dark","$screen_animations":[]},
+
+
+
+"progress_screen@common.base_screen": {
+    "load_screen_immediately": false,
+    "force_render_below": false,
+	  "button_mappings": [
+      {
+        "from_button_id": "button.menu_cancel",
+        "to_button_id": "button.menu_exit",
+        "mapping_type": "global"
+      }
+    ]   }
+  }
+
